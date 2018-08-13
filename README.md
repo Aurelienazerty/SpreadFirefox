@@ -1,5 +1,7 @@
 # Spread Firefox
 
+Display a message encouraging install Firefox
+
 ## Installation
 
 Copy the extension to phpBB/ext/Aurelienazerty/SpreadFirefox
