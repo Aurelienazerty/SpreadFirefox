@@ -55,7 +55,7 @@ class main_listener implements EventSubscriberInterface
 	public function spread_the_word($event)
 	{
 		$this->user->add_lang_ext('Aurelienazerty/SpreadFirefox', 'spread_firefox');
-		$this->template->assign_var('NOT_USING_FIREFOX'	, (preg_match("/Firefox/i", $this->user->browser) == 0));
+		$this->template->assign_var('NOT_USING_FIREFOX'	, ($this->user->data['user_type'] != 2 && preg_match("/Firefox/i", $this->user->browser) == 0));
 		$this->template->assign_var('SPREAD_FIREFOX_MESSAGE'	, $this->user->lang['SPREAD_THE_WORD']);
 		$this->template->assign_var('SPREAD_FIREFOX_DOWNLOAD_MESSAGE'	, $this->user->lang['DOWNLOAD_TEXT']);
 	}

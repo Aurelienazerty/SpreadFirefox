@@ -12,12 +12,6 @@
             "email": "",
             "homepage": "https://www.team-azerty.com",
             "role": "Main developer"
-        },
-		{
-            "name": "Solidjeuh",
-            "email": "",
-            "homepage": "https://www.muziekpromo.net/",
-            "role": "Dutch translator"
         }
     ],
     "require": {
