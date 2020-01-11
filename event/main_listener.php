@@ -3,12 +3,12 @@
  *
  * Spread Firefox. An extension for the phpBB Forum Software package.
  *
- * @copyright (c) 2018, Aurelienazerty, https://www.team-azerty.com
+ * @copyright (c) 2018, aurelienazerty, https://www.team-azerty.com
  * @license GNU General Public License, version 2 (GPL-2.0)
  *
  */
 
-namespace Aurelienazerty\SpreadFirefox\event;
+namespace aurelienazerty\spreadfirefox\event;
 
 /**
  * @ignore
@@ -54,7 +54,7 @@ class main_listener implements EventSubscriberInterface
 	 */
 	public function spread_the_word($event)
 	{
-		$this->user->add_lang_ext('Aurelienazerty/SpreadFirefox', 'spread_firefox');
+		$this->user->add_lang_ext('aurelienazerty/spreadfirefox', 'spread_firefox');
 		$this->template->assign_var('NOT_USING_FIREFOX'	, ($this->user->data['user_type'] != 2 && preg_match("/Firefox/i", $this->user->browser) == 0));
 		$this->template->assign_var('SPREAD_FIREFOX_MESSAGE'	, $this->user->lang['SPREAD_THE_WORD']);
 		$this->template->assign_var('SPREAD_FIREFOX_DOWNLOAD_MESSAGE'	, $this->user->lang['DOWNLOAD_TEXT']);

@@ -1,6 +1,6 @@
 services:
-    Aurelienazerty.SpreadFirefox.listener:
-        class: Aurelienazerty\SpreadFirefox\event\main_listener
+    aurelienazerty.spreadfirefox.listener:
+        class: aurelienazerty\spreadfirefox\event\main_listener
         arguments:
             - '@template'
             - '@user'

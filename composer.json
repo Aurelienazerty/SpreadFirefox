@@ -1,5 +1,5 @@
 {
-    "name": "Aurelienazerty/SpreadFirefox",
+    "name": "aurelienazerty/spreadfirefox",
     "type": "phpbb-extension",
     "description": "Display a message encouraging install Firefox",
     "homepage": "https://www.team-azerty.com",
@@ -8,7 +8,7 @@
     "license": "GPL-2.0-only",
     "authors": [
         {
-            "name": "Aurelienazerty",
+            "name": "aurelienazerty",
             "email": "",
             "homepage": "https://www.team-azerty.com",
             "role": "Main developer"
