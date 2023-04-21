@@ -4,5 +4,6 @@ services:
         arguments:
             - '@template'
             - '@user'
+            - '@language'
         tags:
             - { name: event.listener }

@@ -25,18 +25,22 @@ class main_listener implements EventSubscriberInterface
 	protected $template;
 	/** @var \phpbb\user $user */
 	protected $user;
+    /** @var \phpbb\language\language $language */
+    protected $language;
 	
 	/**
 	 * Constructor
 	 *
 	 * @param \phpbb\template\template $template the template object
 	 * @param \phpbb\user	$user	user object
+     * @param \phpbb\language\language $language language object
 	 * @access public
 	 */
-	public function __construct(\phpbb\template\template $template, \phpbb\user $user)
+	public function __construct(\phpbb\template\template $template, \phpbb\user $user, \phpbb\language\language $language)
 	{
 		$this->template = $template;
 		$this->user = $user;
+        $this->language = $language;
 	}
 	
 	static public function getSubscribedEvents()
@@ -54,9 +58,9 @@ class main_listener implements EventSubscriberInterface
 	 */
 	public function spread_the_word($event)
 	{
-		$this->user->add_lang_ext('aurelienazerty/spreadfirefox', 'spread_firefox');
+        $this->language->add_lang('spread_firefox', 'aurelienazerty/spreadfirefox');
 		$this->template->assign_var('NOT_USING_FIREFOX'	, ($this->user->data['user_type'] != 2 && preg_match("/Firefox/i", $this->user->browser) == 0));
 		$this->template->assign_var('SPREAD_FIREFOX_MESSAGE'	, $this->user->lang['SPREAD_THE_WORD']);
-		$this->template->assign_var('SPREAD_FIREFOX_DOWNLOAD_MESSAGE'	, $this->user->lang['DOWNLOAD_TEXT']);
+		$this->template->assign_var('SPREAD_FIREFOX_DOWNLOAD_MESSAGE'	, $this->language->lang('DOWNLOAD_TEXT'));
 	}
 }
